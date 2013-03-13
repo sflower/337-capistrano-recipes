@@ -8,7 +8,7 @@ load "config/recipes/nodejs"
 load "config/recipes/rbenv"
 load "config/recipes/check"
 
-server "72.14.183.209", :web, :app, :db, primary: true
+server "46.19.32.206", :web, :app, :db, primary: true
 
 set :user, "deployer"
 set :application, "blog"
@@ -17,7 +17,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@github.com:ryanb/#{application}.git"
+set :repository, "github.com/sflower/337-capistrano-recipes.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
