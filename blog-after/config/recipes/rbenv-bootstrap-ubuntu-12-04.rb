@@ -1,6 +1,6 @@
 namespace :rbenv_bootstrap do
   task :install, roles: :app do
-    run "apt-get update"
+    run "#{sudo} apt-get update"
     
     # Install development tools:
     run "#{sudo} apt-get -y install build-essential"
