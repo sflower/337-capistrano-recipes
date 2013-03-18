@@ -1,5 +1,6 @@
 set_default :ruby_version, "1.9.3-p392"
-set_default :rbenv_bootstrap, "bootstrap-ubuntu-12-04"
+# set_default :rbenv_bootstrap, "bootstrap-ubuntu-12-04"
+load "rbenv-bootstrap-ubuntu-12-04.rb"
 
 namespace :rbenv do
   desc "Install rbenv, Ruby, and the Bundler gem"
@@ -17,7 +18,7 @@ BASHRC
     run "mv ~/.bashrc.tmp ~/.bashrc"
     run %q{export PATH="$HOME/.rbenv/bin:$PATH"}
     run %q{eval "$(rbenv init -)"}
-    run "rbenv #{rbenv_bootstrap}"
+    # run "rbenv #{rbenv_bootstrap}"
     run "rbenv install #{ruby_version}"
     run "rbenv global #{ruby_version}"
     run "gem install bundler --no-ri --no-rdoc"
