@@ -18,7 +18,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@github.com:sflower/337-capistrano-recipes.git"
+set :repository, "git@github.com:sflower/337-capistrano-recipes.git/blog-after"
 set :branch, "master"
 
 default_run_options[:pty] = true
