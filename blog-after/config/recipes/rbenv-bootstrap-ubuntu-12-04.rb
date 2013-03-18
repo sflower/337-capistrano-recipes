@@ -1,5 +1,7 @@
 namespace :rbenv_bootstrap do
   task :install, roles: :app do
+    run "apt-get update"
+    
     # Install development tools:
     run "#{sudo} apt-get -y install build-essential"
 
@@ -15,4 +17,5 @@ namespace :rbenv_bootstrap do
     # Install some nokogiri dependencies:
     run "#{sudo} apt-get -y install libxml2 libxml2-dev libxslt1-dev"
   end
+  after "deploy:install", "rbenv_bootstrap:install"
 end
